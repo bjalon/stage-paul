@@ -2,6 +2,14 @@
 
 Ce projet a pour objectif de s'amuser avec un Raspberry pi et une caméra
 
+## Server Diode
+
+```
+cd python
+export FLASK_APP=server_diode4
+flask run --host=0.0.0.0
+```
+
 ## Préparation du raspberry
 
 * sudo raspi-config
