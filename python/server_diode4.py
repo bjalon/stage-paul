@@ -50,3 +50,16 @@ def shoot():
   camera.capture(filename)
   camera.stop_preview()
   return send_file(filename, mimetype='image/jpg')
+
+
+@app.route("/")
+def web():
+  return """
+<html>
+  <body>
+    <h1>Qastia Detector</h1>
+    <img src="/shoot">
+  </body>
+</html>
+  """
+
