@@ -7,7 +7,6 @@ from picamera import PiCamera
 from time import sleep
 
 is_blink_requested = False
-camera = PiCamera()
 
 def diode_loop():
   while True:
@@ -46,10 +45,11 @@ def off():
 @app.route("/shoot")
 def shoot():
   filename = '/tmp/test.jpg'
-  camera.start_preview()
-  camera.capture(filename)
-  camera.stop_preview()
-  return send_file(filename, mimetype='image/jpg')
+  try:
+    with PiCamera() as camera:
+        camera.capture(filename)
+  finally:
+    return send_file(filename, mimetype='image/jpg')
 
 
 @app.route("/")
@@ -58,6 +58,9 @@ def web():
 <html>
   <body>
     <h1>Qastia Detector</h1>
+    <form>
+      <input Type="button" value="Reshooter" onClick="history.go(0)">
+    </form>
     <img src="/shoot">
   </body>
 </html>

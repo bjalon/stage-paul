@@ -6,6 +6,7 @@ Ce projet a pour objectif de s'amuser avec un Raspberry pi et une caméra
 
 ```
 cd python
+pip install
 export FLASK_APP=server_diode4
 flask run --host=0.0.0.0
 ```
