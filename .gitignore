@@ -1,3 +1,4 @@
 *.out
+*.swp
 .idea
 __pycache__
