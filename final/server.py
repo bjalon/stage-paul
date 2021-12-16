@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import features.distance as distance
 import features.ia as ia
 import features.led as led
+import cv2
 
 GPIO.setmode(GPIO.BCM)
 
@@ -44,6 +45,7 @@ def shoot():
 
 @app.route("/")
 def web():
+  _distance = distance.get_distance()
   return f"""
 <html>
   <body>
@@ -53,15 +55,16 @@ def web():
         <input Type="button" value="Reshooter" onClick="history.go(0)">
       </form>
     </p>
-    <p>Distance: {distance.get_distance()}</p>
+    <p>Distance: {_distance}</p>
     <img src="/shoot">
   </body>
 </html>
   """
 
 @app.route("/distance")
-def distance():
-  return f"<p>distance {distance.get_distance()}</p>"
+def distance_action():
+  _distance = distance.get_distance()
+  return f"<p>distance {distance}</p>"
 
 
 if __name__ == "__main__":
