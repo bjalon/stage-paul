@@ -38,8 +38,13 @@ def shoot():
 
   success, img = cap.read()
   result, objectInfo = ia.getObjects(img,0.50,0.2)
+  # "person" in str(objectInfo)
   print(objectInfo)
   cv2.imwrite(filename, result)
+  if "person" in str(objectInfo) = True
+    return send_file(filename, mimetype='/home/pi/data/personne.jpeg')
+    return send_file(filename, mimetype='image/jpg')
+  else
   return send_file(filename, mimetype='image/jpg')
 
 

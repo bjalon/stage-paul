@@ -38,4 +38,5 @@ def getObjects(img, thres, nms, draw=True, objects=[]):
                     cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
 
     return img,objectInfo
+    # "person" in str(objectInfo)
 
