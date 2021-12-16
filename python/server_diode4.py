@@ -8,26 +8,33 @@ import cv2
 
 
 is_blink_requested = False
+gpio_led = 4
+gpio_echo = 20 
+gpio_tri = 21
+
+
+print("**************** Configuration *************")
+print(f"** LED Anode : GPIO_{gpio_led}")
+print(f"** Détecteur distance ECHO: GPIO_{gpio_echo}")
+print(f"** Détecteur distance TRI : GPIO_{gpio_tri}")
+print("********************************************")
 
 def diode_loop():
   while True:
     if is_blink_requested:
-      state = GPIO.input(channel)
+      state = GPIO.input(gpio_led)
       print(f"Etat de la diode: {state}")
 
       if state == 0:
-        GPIO.output(channel, GPIO.HIGH)
+        GPIO.output(gpio_led, GPIO.HIGH)
       else:
-        GPIO.output(channel, GPIO.LOW)
+        GPIO.output(gpio_led, GPIO.LOW)
     time.sleep(1)
 
 threading.Thread(target=diode_loop).start()
 
-
-channel = 4
-
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(channel, GPIO.OUT)
+GPIO.setup(gpio_led, GPIO.OUT)
 
 
 # Image annotatrion
@@ -88,10 +95,13 @@ def off():
 
 @app.route("/shoot")
 def shoot():
+  cap = cv2.VideoCapture(0)
+  cap.set(3,640)
+  cap.set(4,480)
   filename = "/home/pi/data/test_annotated.jpeg"
 
   success, img = cap.read()
-  result, objectInfo = getObjects(img,0.45,0.2)
+  result, objectInfo = getObjects(img,0.50,0.2)
   print(objectInfo)
   cv2.imwrite(filename, result)
   return send_file(filename, mimetype='image/jpg')
