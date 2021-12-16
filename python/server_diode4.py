@@ -157,6 +157,4 @@ def web():
 
 @app.route("/distance")
 def distance():
-  global is_blink_requested
-  is_blink_requested = True
   return "<p>distance!</p>"
