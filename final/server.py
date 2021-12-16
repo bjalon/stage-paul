@@ -62,3 +62,7 @@ def web():
 @app.route("/distance")
 def distance():
   return f"<p>distance {distance.get_distance()}</p>"
+
+
+if __name__ == "__main__":
+  app.run(host='0.0.0.0', port=5000)
