@@ -123,7 +123,6 @@ def web():
   """
 
 @app.route("/distance")
-def distance():
   return "<p>distance!</p>"
 
  GPIO.setmode(GPIO.BCM)
@@ -138,7 +137,7 @@ def distance():
 
  repet = input("Entrez un nombre de repetitions de mesure : ")
 
- for x in range(int(repet)):    # On prend la mesure "repet" fois
+ for x in range(int(1)):    # On prend la mesure "repet" fois
 
     time.sleep(1)       # On la prend toute les 1 seconde
 
