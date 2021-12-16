@@ -123,7 +123,6 @@ def web():
   """
 
 @app.route("/distance")
-  return "<p>distance!</p>"
 
  GPIO.setmode(GPIO.BCM)
 
@@ -156,5 +155,7 @@ def web():
     print(f"La distance est de : {str(distance)}cm")
 
  GPIO.cleanup()
+
+ return "<p>distance!</p>"
 
 
