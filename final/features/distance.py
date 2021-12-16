@@ -1,6 +1,9 @@
 import RPi.GPIO as GPIO
 import time
 
+gpio_echo = 20
+gpio_tri = 21
+
 GPIO.setmode(GPIO.BCM)
 
 def get_distance():

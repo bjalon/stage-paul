@@ -7,15 +7,12 @@ import features.led as led
 
 GPIO.setmode(GPIO.BCM)
 
-gpio_led = 4
-gpio_echo = 20
-gpio_tri = 21
 
 
 print("**************** Configuration *************")
-print(f"** LED Anode : GPIO_{gpio_led}")
-print(f"** Détecteur distance ECHO: GPIO_{gpio_echo}")
-print(f"** Détecteur distance TRI : GPIO_{gpio_tri}")
+print(f"** LED Anode : GPIO_{led.gpio_led}")
+print(f"** Détecteur distance ECHO: GPIO_{distance.gpio_echo}")
+print(f"** Détecteur distance TRI : GPIO_{distance.gpio_tri}")
 print("********************************************")
 
 

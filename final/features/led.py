@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 import threading
 from time import sleep
 
+
+gpio_led = 4
 is_blink_requested = False
 
 def diode_loop():
