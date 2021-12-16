@@ -122,6 +122,10 @@ def web():
 </html>
   """
 
+@app.route("/distance")
+def distance():
+  return "<p>distance!</p>"
+
  GPIO.setmode(GPIO.BCM)
 
  gpio_tri = 21          # Entree Trig du HC-SR04 branchee au GPIO 21
@@ -155,6 +159,3 @@ def web():
  GPIO.cleanup()
 
 
-@app.route("/distance")
-def distance():
-  return "<p>distance!</p>"
