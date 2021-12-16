@@ -135,9 +135,9 @@ def web():
 
  GPIO.output(gpio_tri, False)
 
- repet = input("Entrez un nombre de repetitions de mesure : ")
+ repet = input("Entrez un nombre de repetitions de mesure : 1 ")
 
- for x in range(int(1)):    # On prend la mesure "repet" fois
+ for x in range(int(repet)):    # On prend la mesure "repet" fois
 
     time.sleep(1)       # On la prend toute les 1 seconde
 
