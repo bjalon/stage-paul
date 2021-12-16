@@ -1,9 +1,9 @@
 from flask import Flask
 from flask import send_file
 import RPi.GPIO as GPIO
-import .features.distance as distance
-import .features.ia as ia
-import .features.led as led
+import features.distance as distance
+import features.ia as ia
+import features.led as led
 
 GPIO.setmode(GPIO.BCM)
 
