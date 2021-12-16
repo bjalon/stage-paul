@@ -83,6 +83,8 @@ def get_distance():
   GPIO.setup(gpio_tri,GPIO.OUT)
   GPIO.setup(gpio_echo,GPIO.IN)
 
+  GPIO.output(gpio_tri, False)
+  time.sleep(0.1)
   GPIO.output(gpio_tri, True)
   time.sleep(0.00001)
   GPIO.output(gpio_tri, False)
