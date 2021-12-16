@@ -124,6 +124,8 @@ def web():
 
 @app.route("/distance")
 def distance():
+ global is_blink_requested
+   is_blink_requested = False
  return "<p>distance</p>"
 
  GPIO.setmode(GPIO.BCM)
