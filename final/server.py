@@ -107,7 +107,7 @@ def web_persons():
 
 @app.route("/download/<filename>")
 def persons_web(filename):
-  return filename
+  return send_file(person_detector.DATA_DIR + "/" + filename, mimetype='image/jpg')
 
 
 
