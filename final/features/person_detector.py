@@ -39,6 +39,7 @@ threading.Thread(target=person).start()
 def generate_html():
   list_persons = """<html>
    <body>
+   <input Type="button" value="back" onClick="window.location.href = '/'">
     <ul>"""
 
   files = get_persons_files()

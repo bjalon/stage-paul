@@ -81,6 +81,7 @@ def web():
     <p>
       <form>
         <input Type="button" value="Reshooter" onClick="history.go(0)">
+        <input Type="button" value="persons" onClick="window.location.href = '/persons'">
       </form>
     </p>
     <p>Distance: {_distance}</p>
