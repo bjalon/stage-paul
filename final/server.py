@@ -6,7 +6,7 @@ import cv2
 import features.distance as distance
 import features.ia as ia
 import features.led as led
-import features.person_detector
+import features.person_detector as person_detector 
 
 last_person_filename = "/home/pi/data/person.jpeg"
 last_picture_filename = "/home/pi/data/test_annotated.jpeg"
