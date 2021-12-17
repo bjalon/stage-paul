@@ -1,10 +1,12 @@
 from flask import Flask
 from flask import send_file
 import RPi.GPIO as GPIO
+import cv2
+
 import features.distance as distance
 import features.ia as ia
 import features.led as led
-import cv2
+import features.person_detector
 
 last_person_filename = "/home/pi/data/person.jpeg"
 last_picture_filename = "/home/pi/data/test_annotated.jpeg"
@@ -98,6 +100,18 @@ def web():
 def distance_action():
   _distance = distance.get_distance()
   return f"<p>distance {distance}</p>"
+
+@app.route("/persons")
+def web_persons():
+  return person_detector.generate_html()
+
+@app.route("/home/pi/data/persons/20211217 1037.jpeg")
+def persons_web():
+  return """
+
+
+  """
+
 
 
 if __name__ == "__main__":
