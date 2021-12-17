@@ -39,7 +39,7 @@ def generate_html():
   files = get_persons_files()
   print(f"** fichiers détectés {files}")
   for file in files:
-    list_persons = list_persons + "    <li><a href=\"/home/pi/data/persons/" + file + "\">" + file + "</a></li>\n"
+    list_persons = list_persons + "    <li><a href=\"/download/" + file + "\">" + file + "</a></li>\n"
 
   list_persons = list_persons + """  </ul>
    </body>

@@ -105,12 +105,9 @@ def distance_action():
 def web_persons():
   return person_detector.generate_html()
 
-@app.route("/home/pi/data/persons/20211217 1037.jpeg")
-def persons_web():
-  return """
-
-
-  """
+@app.route("/download/<filename>")
+def persons_web(filename):
+  return filename
 
 
 
