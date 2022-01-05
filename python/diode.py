@@ -4,9 +4,9 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(4, GPIO.OUT)
-
 channel = 4
+GPIO.setup(channel, GPIO.OUT)
+
 state = GPIO.input(channel)  
 print(f"Etat de la diode: {state}")
 if state == 0:
