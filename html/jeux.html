@@ -1,0 +1,85 @@
+  <html>
+    <head>
+      <title>Paul</title>
+      <link href="./css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#"><img src="./img/logo.png"/></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="./home.html">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="./jeux.html">Jeux</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="./paul.html">Qui suis-je</a>
+			  </li>
+			</ul>
+
+		  </div>
+		</nav>
+
+		<div class="container">
+		  <div class="jumbotron">
+			  <div class="row text-center">
+				<div class="col-sm">
+				  <label id="nombre1">12</label>
+				</div>
+				<div class="col-sm">
+				  <label id="nombre2">12</label>
+				</div>
+			  </div>
+		  </div>
+		  <div class="row">
+			<div class="col-sm">
+			  <div class="form-group">
+				<label for="sommeLabel">Somme des 2 nombre</label>
+				<input type="text" class="form-control" id="somme1" aria-describedby="sommeHelp" placeholder="exemple 12">
+				<small id="sommeHelp" class="form-text text-muted">Attention si tu te trompes tu as un niveau moins que CP.</small>
+			  </div>
+			</div>		
+			<div class="col-sm">
+			  <div class="form-group">
+				<label for="differenceLabel">Différence des 2 nombre</label>
+				<input type="text" class="form-control" id="difference1" aria-describedby="differenceHelp" placeholder="exemple 12">
+				<small id="differenceHelp" class="form-text text-muted">Attention si tu te trompes tu as un niveau moins que CE1.</small>
+			  </div>
+			</div>
+			<div class="col-sm">
+			  <div class="form-group">
+				<label for="produitLabel">Produit des 2 nombre</label>
+				<input type="text" class="form-control" id="produit1" aria-describedby="produitHelp" placeholder="exemple 12">
+				<small id="produitHelp" class="form-text text-muted">Aller c'est déjà pas mal...</small>
+			  </div>			
+		    </div>
+		</div>
+		  <div class="row">
+			<div class="col-sm">
+			  <button type="button" id="validationSomme" class="btn btn-primary">C'est mon dernier mot Jean-Pierre</button>
+			</div>		
+			<div class="col-sm">
+			  <button type="button" id="validationDifference" class="btn btn-primary">C'est mon dernier mot Jean-Pierre</button> 
+			</div>
+			<div class="col-sm">
+			  <button type="button" id="validationProduit" class="btn btn-primary">C'est mon dernier mot Jean-Pierre</button>		
+		    </div>
+		</div>
+		
+		<div class="jumbotron">
+			<button type="button" id="recommence" class="btn btn-danger" onclick="location.reload()">Recommencer</button>
+	    </div>
+	</div>
+		
+	</body>
+
+	<script src="./js/paul.js"></script>
+</html>
